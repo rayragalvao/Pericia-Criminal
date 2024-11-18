@@ -624,3 +624,163 @@ nav ul li a:hover::after {
 .icon-inov {
     width: 25%;
 }
+
+footer {
+    margin-top: 30%;
+    background-color: rgba(14, 90, 65, 0.952);
+    color: #fff; /* Cor do texto */
+    padding: 30px 0; /* Padding para espaçamento interno */
+    text-align: center; /* Centralizar conteúdo */
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Adaptável a telas menores */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 2px;
+}
+
+.footer-section {
+    flex: 1; /* Permite que as seções ocupem espaço proporcional */
+    min-width: 250px; /* Define um tamanho mínimo */
+    margin: 10px;
+}
+
+.footer-section h3 {
+    color: #e4fdf1;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #0cec69af;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 16px;
+    border-top: 1px solid #ffffff; /* Linha para separar conteúdo */
+    padding-top: 10px;
+}
+
+.containerCar {
+    margin-top: 50px !important; /* Garantir que o topo tenha espaçamento adequado */
+    position: relative !important; /* Manter a posição relativa para animações */
+    width: 280px !important; /* Garantir que a largura seja fixa */
+    margin: 50px auto !important; /* Manter o centro e o espaçamento */
+    perspective: 1000px !important; /* Manter a perspectiva da animação */
+    z-index: 1 !important; /* Garantir que o containerCar não sobreponha o footer */
+}
+
+.carousel {
+    position: absolute !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    transform-style: preserve-3d !important;
+    animation: rotate360 60s infinite linear !important;
+}
+
+.image {
+    position: absolute !important;
+    width: 280px !important;
+    height: 180px !important;
+    background-size: cover !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 2rem !important;
+    box-shadow: 0 12px 30px rgba(5, 194, 106, 0.5) !important;
+}
+
+span {
+    margin: auto;
+    font-size: 2rem;
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+.image:nth-child(1) {
+    background-image: url(../images/back2.jpeg);
+    transform: rotateY(0deg) translateZ(430px);
+}
+
+.image:nth-child(2) {
+    background-image: url(../images/rot.jpeg);
+    transform: rotateY(40deg) translateZ(430px);
+}
+
+.image:nth-child(3) {
+    background-image: url(../images/rot2.jpeg);
+    transform: rotateY(80deg) translateZ(430px);
+}
+
+.image:nth-child(4) {
+    background-image: url(../images/rot3.jpeg);
+    transform: rotateY(120deg) translateZ(430px);
+}
+
+.image:nth-child(5) {
+    background-image: url(../images/rot4.jpeg);
+    transform: rotateY(160deg) translateZ(430px);
+}
+
+.image:nth-child(6) {
+    background-image: url(../images/rot5.jpg);
+    transform: rotateY(200deg) translateZ(430px);
+}
+
+.image:nth-child(7) {
+    background-image: url(../images/rot6.jpg);
+    transform: rotateY(240deg) translateZ(430px);
+}
+
+.image:nth-child(8) {
+    background-image: url(../images/rot7.jpg);
+    transform: rotateY(280deg) translateZ(430px);
+}
+
+.image:nth-child(9) {
+    background-image: url(../images/rot8.jpg);
+    transform: rotateY(320deg) translateZ(430px);
+}
+
+.image-fundoRod {
+    position: absolute;
+    margin-top: -26%;
+    transform: rotate(90deg);
+    opacity: 0.9;
+    z-index: -1;
+    width: 50%;
+    left: -7.5%;
+}
