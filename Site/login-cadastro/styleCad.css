@@ -305,5 +305,14 @@ body .back-btn {
     font-size: 25px;
     padding: 10px;
     z-index: 11;
+    border: none; 
+    outline: none; 
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+body .back-btn:hover {
+    background-color: transparent; 
+    color: #000000; 
 }
 

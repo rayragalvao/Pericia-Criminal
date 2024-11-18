@@ -624,13 +624,3 @@ nav ul li a:hover::after {
 .icon-inov {
     width: 25%;
 }
-
-.icon-dt {
-    width: 20%;
-}
-
-.icon-dt:hover {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
