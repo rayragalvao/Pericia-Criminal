@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sour Gummy', sans-serif;
+            color: #E1E1E1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Botão de voltar */
+        .back-btn a {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 25px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn a:hover {
+            color: #00FFAB;
+        }
+
+        /* Pontuação */
+        #pontuacao {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #pontuacao span {
+            font-size: 1.5rem;
+            color: #E1E1E1;
+        }
+
+        #pontuacaoFinalJogo span {
+            font-weight: bold;
+            color: #00FFAB;
+        }
+
+        /* Container do Quiz */
+        #quiz-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #1F1F1F;
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(9, 187, 113, 0.699);
+            text-align: center;
+        }
+
+        #infoQuestao span,
+        #perguntaDaQuestaoAtual span {
+            font-size: 1.5rem;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        #infoAlternativas span {
+            font-size: 1.2rem;
+            color: #E1E1E1;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #opcoes label {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #opcoes input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #opcoes input[type="radio"]:hover+label {
+            color: #00FFAB;
+        }
+
+        /* Botões */
+        #botoes button {
+            font-family: 'Sour Gummy', sans-serif;
+            background-color: #00FFAB;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            color: #121212;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            margin: 10px;
+        }
+
+        #botoes button:hover {
+            background-color: #00E695;
+            transform: translateY(-3px);
+        }
+
+        #botoes button:active {
+            transform: translateY(1px);
+        }
+
+        #botoes button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botão para voltar -->
+    <div class="back-btn">
+        <a href="../cadastro.html">
+            ❮
+        </a>
+    </div>
+
+    <div id="pontuacaoEJogo">
+        <!-- Pontuação -->
+        <div id="pontuacao">
+            <div id="pontuacaoDuranteJogo">
+                <span>Quantidade de acertos: <span id="spanCertas">0</span></span><br>
+                <span>Quantidade de erros: <span id="spanErradas">0</span></span>
+            </div>
+            <div id="pontuacaoFinalJogo">
+                <span>Pontuação Final: <span id="spanPontuacaoFinal">***</span></span><br>
+                <span id="msgFinal">***</span>
+            </div>
+        </div>
+
+        <!-- Container do Quiz -->
+        <div id="quiz-container">
+            <div id="infoQuestao">
+                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual">1</span> de <span id="qtdQuestoes"></span> questões.</span>
+            </div>
+            <div id="perguntaDaQuestaoAtual">
+                <span id="spanQuestaoExibida" class="text-bold"></span>
+            </div>
+            <div id="infoAlternativas">
+                <span><em>Escolha uma opção dentre as abaixo:</em></span>
+            </div>
+            <div id="opcoes">
+                <input type="radio" id="primeiraOpcao" name="option" value="alternativaA">
+                <label for="primeiraOpcao" id="labelOpcaoUm"></label><br>
+                <input type="radio" id="segundaOpcao" name="option" value="alternativaB">
+                <label for="segundaOpcao" id="labelOpcaoDois"></label><br>
+                <input type="radio" id="terceiraOpcao" name="option" value="alternativaC">
+                <label for="terceiraOpcao" id="labelOpcaoTres"></label>
+            </div>
+            <div id="botoes">
+                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
+                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
+                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const listaDeQuestoes = [
+            {
+                pergunta: "1. O que é perícia criminal?",
+                alternativaA: "A análise de evidências em investigações policiais.",
+                alternativaB: "A investigação de crimes por meio de entrevistas.",
+                alternativaC: "A preparação de acusados para julgamento.",
+                alternativaCorreta: "alternativaA"
+            },
+            {
+                pergunta: "2. Quais profissionais geralmente realizam a perícia criminal?",
+                alternativaA: "Policiais e advogados.",
+                alternativaB: "Médicos legistas e peritos especializados.",
+                alternativaC: "Investigadores particulares.",
+                alternativaCorreta: "alternativaB"
+            },
+            // Adicione mais questões aqui
+        ];
+
+        let questaoAtual = 0;
+        let acertos = 0;
+        let erros = 0;
+
+        function carregarQuestao() {
+            const questao = listaDeQuestoes[questaoAtual];
+            document.getElementById("spanNumeroDaQuestaoAtual").textContent = questaoAtual + 1;
+            document.getElementById("qtdQuestoes").textContent = listaDeQuestoes.length;
+            document.getElementById("spanQuestaoExibida").textContent = questao.pergunta;
+            document.getElementById("labelOpcaoUm").textContent = questao.alternativaA;
+            document.getElementById("labelOpcaoDois").textContent = questao.alternativaB;
+            document.getElementById("labelOpcaoTres").textContent = questao.alternativaC;
+            document.querySelectorAll('input[name="option"]').forEach(input => input.checked = false);
+            document.getElementById("btnProx").disabled = true;
+        }
+
+        function submeter() {
+            const selecionado = document.querySelector('input[name="option"]:checked');
+            if (!selecionado) {
+                alert("Selecione uma resposta!");
+                return;
+            }
+            const resposta = selecionado.value;
+            if (resposta === listaDeQuestoes[questaoAtual].alternativaCorreta) {
+                acertos++;
+                document.getElementById("spanCertas").textContent = acertos;
+            } else {
+                erros++;
+                document.getElementById("spanErradas").textContent = erros;
+            }
+            document.getElementById("btnProx").disabled = false;
+        }
+
+        function avancar() {
+            if (questaoAtual + 1 < listaDeQuestoes.length) {
+                questaoAtual++;
+                carregarQuestao();
+            } else {
+                finalizar();
+            }
+        }
+
+        function finalizar() {
+            document.getElementById("spanPontuacaoFinal").textContent = acertos;
+            document.getElementById("msgFinal").textContent = acertos > erros ? "Parabéns, bom desempenho!" : "Tente novamente.";
+            document.getElementById("btnTentarNovamente").disabled = false;
+        }
+
+        function tentarNovamente() {
+            questaoAtual = 0;
+            acertos = 0;
+            erros = 0;
+            document.getElementById("spanCertas").textContent = acertos;
+            document.getElementById("spanErradas").textContent = erros;
+            document.getElementById("btnTentarNovamente").disabled = true;
+            carregarQuestao();
+        }
+
+        carregarQuestao();
+    </script>
+</body>
+</html>
