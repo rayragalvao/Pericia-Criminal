@@ -19,9 +19,98 @@
 }
 
 body {
-    color: var(--new-black);
-    background-color: var(--new-white);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Sour Gummy';
+    color: #ee1010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+body .back-btn {
+    position: absolute;
+    top: 15px;
+    left: 168px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 25px;
+    z-index: 11;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body .back-btn:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.image-fundoCards {
+    position: absolute;
+    left: -7.5%;
+    transform: rotate(90deg);
+    opacity: 0.9;
+    z-index: -1;
+    width: 50%;
+}
+
+.image-fundoAreas2 {
+    position: absolute;
+    margin-top: 6%;
+    left: 55.8%;
+    transform: rotate(90deg);
+    opacity: 1;
+    z-index: -1;
+    width: 50%;
+}
+
+.image-fundoAreas3 {
+    position: absolute;
+    left: 64%;
+    transform: rotate(220deg);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.image-fundoAreas4 {
+    position: absolute;
+    left: -13%;
+    transform: rotate(35deg);
+    opacity: 0.7;
+    z-index: -1;
+    width: 10%;
+}
+
+.quiz-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 10%;
+    height: auto;
+    max-width: 900px;
+    background-color: #1F1F1F;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(9, 187, 113, 0.699);
+    text-align: center;
+}
+
+.quiz-header {
+    margin-bottom: 15px;
+}
+
+.quiz-header h1 {
+    font-size: 2.5rem;
+    color: #00FFAB;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quiz-header p {
+    font-size: 1.5rem;
+    color: #ffffff;
 }
 
 button {

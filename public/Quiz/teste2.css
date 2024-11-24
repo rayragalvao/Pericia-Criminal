@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sour Gummy';
+    color: #E1E1E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+body .back-btn {
+    position: absolute;
+    top: 15px;
+    left: 168px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 25px;
+    z-index: 11;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body .back-btn:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+
+.image-fundoCards {
+    position: absolute;
+    left: -7.5%;
+    transform: rotate(90deg);
+    opacity: 0.9;
+    z-index: -1;
+    width: 50%;
+}
+
+.image-fundoAreas2 {
+    position: absolute;
+    margin-top: 6%;
+    left: 55.8%;
+    transform: rotate(90deg);
+    opacity: 1;
+    z-index: -1;
+    width: 50%;
+}
+
+.image-fundoAreas3 {
+    position: absolute;
+    left: 64%;
+    transform: rotate(220deg);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.image-fundoAreas4 {
+    position: absolute;
+    left: -13%;
+    transform: rotate(35deg);
+    opacity: 0.7;
+    z-index: -1;
+    width: 10%;
+}
+
+.quiz-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 10%;
+    height: 120%;
+    max-width: 900px;
+    background-color: #1F1F1F;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 10px 30px rgba(9, 187, 113, 0.699);
+    text-align: center;
+}
+
+.quiz-containerP {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 2%;
+    height: 120%;
+    max-width: 900px;
+    background-color: #2B2B2B;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
+    text-align: center;
+}
+
+#perguntaDaQuestaoAtual span {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.pontuacao-container {
+    font-size: 1rem;
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
+    text-align: center;
+    margin: 0 auto; 
+    background-color: #2B2B2B;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.quiz-header {
+    margin-bottom: 15px;
+}
+
+.quiz-header h1 {
+    font-size: 2.5rem;
+    color: #00FFAB;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quiz-header p {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.crime-tape {
+    position: absolute;
+    top: -28px;
+    margin-left: -32px;
+    transform: rotate(-12deg);
+    z-index: 10;
+}
+
+.crime-tape img {
+    border-radius: 5px;
+    width: 280px;
+    opacity: 0.7;
+}
+
+/* Pontuação */
+#pontuacao {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#pontuacao span {
+    font-size: 1.5rem;
+    color: #E1E1E1;
+}
+
+#pontuacaoFinalJogo span {
+    font-weight: bold;
+    color: #00FFAB;
+}
+
+#opcoes label {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#opcoes input[type="radio"] {
+    margin-right: 10px;
+}
+
+#opcoes input[type="radio"]:hover+label {
+    color: #00FFAB;
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'Sour Gummy';
+    background-color: #00FFAB;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 50px;
+    color: #121212;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease;
+    width: 30%;
+}
+
+button:hover {
+    background-color: #00E695;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background-color: #555;
+}
+
+button:disabled:hover {
+    background-color: #555;
+    transform: none;
+}
