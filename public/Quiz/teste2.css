@@ -217,3 +217,16 @@ button:disabled:hover {
     background-color: #555;
     transform: none;
 }
+
+.mensagemFinal {
+    margin-left: 80%;
+    position: absolute;
+    margin-top: 31%;
+    font-size: 25px;
+    color: #063b2c;
+    text-align: center;
+    font-weight: bold;
+    padding: 40px;
+    height: 110px;
+    width: 280px;
+}
