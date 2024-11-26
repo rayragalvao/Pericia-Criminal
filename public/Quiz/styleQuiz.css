@@ -76,13 +76,46 @@ body .back-btn:hover {
     position: relative;
     width: 100%;
     margin-top: 10%;
-    height: auto;
+    height: 120%;
     max-width: 900px;
     background-color: #1F1F1F;
     padding: 30px;
     border-radius: 35px;
     box-shadow: 0 10px 30px rgba(9, 187, 113, 0.699);
     text-align: center;
+}
+
+.quiz-containerP {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 2%;
+    height: 120%;
+    max-width: 900px;
+    background-color: #2B2B2B;
+    padding: 30px;
+    border-radius: 35px;
+    box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
+    text-align: center;
+}
+
+#perguntaDaQuestaoAtual span {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.pontuacao-container {
+    font-size: 1rem;
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
+    text-align: center;
+    margin: 0 auto; 
+    background-color: #2B2B2B;
+    border-radius: 30px;
+    margin-bottom: 20px;
 }
 
 .quiz-header {
@@ -102,22 +135,6 @@ body .back-btn:hover {
     color: #ffffff;
 }
 
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-.question-container {
-    background-color: #2B2B2B;
-    box-shadow: 0 0px 25px rgba(9, 187, 113, 0.699);
-    padding: 20px;
-    border-radius: 30px;
-    margin-bottom: 20px;
-}
-
 .crime-tape {
     position: absolute;
     top: -28px;
@@ -132,26 +149,35 @@ body .back-btn:hover {
     opacity: 0.7;
 }
 
-.question-container p {
-    font-size: 1.6rem;
-    color: #ffffff;
-    margin-bottom: 10px;
+/* Pontuação */
+#pontuacao {
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-label {
-    display: block;
-    font-size: 1.2rem;
+#pontuacao span {
+    font-size: 1.5rem;
+    color: #E1E1E1;
+}
+
+#pontuacaoFinalJogo span {
+    font-weight: bold;
+    color: #00FFAB;
+}
+
+#opcoes label {
+    font-size: 1.4rem;
     color: #ffffff;
     margin: 10px 0;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
-input[type="radio"] {
+#opcoes input[type="radio"] {
     margin-right: 10px;
 }
 
-input[type="radio"]:hover+label {
+#opcoes input[type="radio"]:hover+label {
     color: #00FFAB;
 }
 
@@ -165,13 +191,13 @@ button {
     font-family: 'Sour Gummy';
     background-color: #00FFAB;
     border: none;
-    padding: 12px 20px;
+    padding: 5px 15px;
     border-radius: 50px;
     color: #121212;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s ease;
-    width: 20%;
+    width: 30%;
 }
 
 button:hover {
@@ -190,4 +216,17 @@ button:disabled {
 button:disabled:hover {
     background-color: #555;
     transform: none;
+}
+
+.mensagemFinal {
+    margin-left: 80%;
+    position: absolute;
+    margin-top: 31%;
+    font-size: 25px;
+    color: #063b2c;
+    text-align: center;
+    font-weight: bold;
+    padding: 40px;
+    height: 110px;
+    width: 280px;
 }
