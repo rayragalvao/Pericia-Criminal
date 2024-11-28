@@ -4,7 +4,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Sour Gummy';
-  background-color: black;
+  background-color: white;
+  background-color: rgba(14, 85, 65, 0.795);
+
 }
 
 :root {
@@ -34,7 +36,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #064230;
 }
 
 .agora {

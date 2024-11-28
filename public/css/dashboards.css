@@ -16,7 +16,7 @@ body {
 .dash-right .avisos {
   width: 100%;
   color: rgb(216, 216, 216);
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Sour Gummy';
 }
 
 .dash-right .avisos .container {
@@ -112,7 +112,7 @@ body {
 /* pagina graficos */
 
 .dash-header {
-  background-color: #212124;
+  background-color: #063b2c;
 }
 
 .dash {
@@ -120,7 +120,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: #ffffff;
   height: 100vh;
   overflow: auto;
 }
@@ -269,9 +269,9 @@ body {
 }
 
 .graph {
-  width: 70%;
+  width: 50%;
   margin: auto;
-  padding-top: 10px;
+  padding-top: 70px;
 }
 
 .tituloGraficos {
@@ -281,7 +281,7 @@ body {
 }
 
 .btn-chart {
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Sour Gummy';
   border: 0;
   font-weight: 600;
   font-size: 18px;
@@ -332,6 +332,10 @@ canvas {
   /* width: 100vw; */
 }
 
+.janela h1 {
+  text-align: center;
+}
+
 .header-left a {
   text-decoration: none;
   color: white;
@@ -348,8 +352,8 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid #000000;
+  background-color: #0e5541;
 }
 
 .dash-right {
@@ -365,7 +369,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #ffffff;
 }
 
 .hello {
@@ -375,7 +379,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #ffffff;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -386,9 +390,9 @@ canvas {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+  border-radius: 15px;
   text-align: center;
   padding: 2% 5%;
 }
@@ -396,14 +400,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
+  border: 3px solid #000000;
+  border-radius: 15px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #00e673;
   padding: 0;
   margin: 0;
 }
@@ -418,11 +422,51 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(11, 90, 64);
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+#kpi {
+  width: 100px;
+}
+
+.totalU {
+  font-size: 20px;
+  margin-top: 2%;
+  margin-left: 100%;
+  width: 280px;
+  height: 110px;
+  border-radius: 30px;
+  border: solid 2px #000000;
+  box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
+  background-color: #0e5541;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+
+.tentQuiz {
+  font-size: 20px;
+  margin-top: -110%;
+  margin-left: 400%;
+  width: 280px;
+  height: 110px;
+  border-radius: 30px;
+  border: solid 2px #000000;
+  box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
+  background-color: #0e5541;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
 }
