@@ -32,7 +32,7 @@ function acertosUser() {
 function pontUser() {
     console.log("Estou na model do acertosUser")
 
-    var instrucaoSQL = `select usuario.nome as nomeUsuario, max(quiz.pontos) as Pontos from usuario join quiz on usuario.id = quiz.fkUsuario group by usuario.nome`
+    var instrucaoSQL = `select usuario.nome as nomeUsuario from usuario join quiz on usuario.id = quiz.fkUsuario where quiz.pontos = (select max(pontos) from quiz);`
     return database.executar(instrucaoSQL)
 }
 

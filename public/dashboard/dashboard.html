@@ -26,33 +26,26 @@
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<!-- <body onload=" atualizarFeed()"> -->
-
 <body onload="obterDadosGrafico(), obterDadosGraficoLinha(), obterDadosGraficoLinha2(), acertosUser(), obterDadosGraficoLinha3()">
 
     <div class="janela">
         <div class="header-left">
             <h1>Perícia Criminal Dashboard</h1>
 
-            <!-- <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div> -->
+            <div class="image-fundoCards">
+                <img src="../assets/fundo-cards.png" alt="">
+            </div>
+            <div class="image-fundoCards2">
+                <img src="../assets/fundo-cards.png" alt="">
+            </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
-                </a>
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>! Você acabou de finalizar o seu quiz, veja o seu resultado ao lado!</h3>
             </div>
 
             <div class="btn-nav">
                 <h3>Gráficos</h3>
             </div>
-
-            <!-- <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div> -->
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
@@ -69,31 +62,31 @@
 
             <div id="kpi" class="kpi">
                 <div class="totalU">Total de usuários cadastrados
-                    <div id="totalUsuarios"></div>
+                    <div id="totalUsuarios" class="result"></div>
                 </div>
                 <div id="tentQuiz" class="tentQuiz">Quiz realizados
-                    <div id="tentaQuiz"></div>
+                    <div id="tentaQuiz" class="result"></div>
                 </div>
                 <div id="pontUser" class="pontUser">Usuário com maior pontuação
-                    <div id="pontuUser"></div>
+                    <div id="pontuUser" class="result"></div>
                 </div>
             </div>
 
+            <div id="graph-container">
             <div class="graph">
                 <canvas id="myChartCanvas"></canvas>
             </div>
 
-            <div class="graph">
+            <div class="graph2">
                 <canvas id="myChartCanvas2"></canvas>
             </div>
-
+        </div>
 
         </div>
     </div>
 
 
 </body>
-
 </html>
 
 <script>
@@ -276,8 +269,8 @@ fetch(`/result/pontUser/`)
             response.json()
                 .then(function (resposta) {
                     // plotarGrafico(resposta,'barra')
-                    console.log(resposta[0].pontUser)
-                    pontaUser.innerHTML = resposta[0].pontUser;
+                    console.log(resposta[0].nomeUsuario)
+                    pontaUser.innerHTML = resposta[0].nomeUsuario;
                     // console.log(JSON.stringify(resposta.qtdUsuarios));
                 })
         } else {
@@ -304,7 +297,7 @@ fetch(`/result/pontUser/`)
                     {
                         label: 'Minímo',
                         data: [],
-                        backgroundColor: '#08af77da',
+                        backgroundColor: '#08af77c0',
                         borderColor: 'black',
                         borderRadius: 45,
                         // barThickness: 120,
@@ -313,7 +306,7 @@ fetch(`/result/pontUser/`)
                     {
                         label: 'Máximo',
                         data: [],
-                        backgroundColor: '#23af80d3',
+                        backgroundColor: '#08af77f0',
                         borderColor: 'black',
                         borderRadius: 45,
                         // barThickness: 120,
@@ -330,6 +323,8 @@ fetch(`/result/pontUser/`)
                     }
                 ]
             };
+
+            
 
             console.log('----------------------------------------------')
             console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
@@ -381,9 +376,9 @@ fetch(`/result/pontUser/`)
                     label: 'Pontuação',
                     data: [],
                     backgroundColor: [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
-                        'rgb(255, 205, 86)'
+                        '#068b5bda',
+                        '#089fadda',
+                        '#045940da'
                     ],
                     hoverOffset: 4
                 }]
@@ -510,5 +505,9 @@ fetch(`/result/pontUser/`)
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
+    }
+
+    function limparSessao() {
+        window.location = "../index.html";
     }
 </script>

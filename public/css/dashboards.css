@@ -268,10 +268,55 @@ body {
   padding: 0 30% 0 30%;
 }
 
-.graph {
-  width: 50%;
-  margin: auto;
+/* Container para os gráficos */
+.graph-container {
+  display: flex; /* Alinha os gráficos lado a lado */
+  justify-content: center; /* Centraliza os gráficos no container */
+  align-items: flex-start; /* Alinha pela parte superior */
+  gap: 20px; /* Espaçamento entre os gráficos */
+  margin: 20px auto; /* Centraliza o container na página */
   padding-top: 70px;
+}
+
+/* Estilo individual para cada gráfico */
+.graph, .graph2 {
+  border-radius: 8px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dimensões dos gráficos */
+.graph {
+  margin-left: 1%;
+  margin-top: 7%;
+  width: 49%; /* Controla o tamanho do primeiro gráfico */
+}
+
+.graph2 {
+  margin-top: -37%;
+  margin-left: 55%;
+  width: 32%; /* Controla o tamanho do segundo gráfico */
+}
+
+.image-fundoCards, .image-fundoCards2 {
+  position: absolute; /* Mantém as imagens no fundo */
+  transform: rotate(90deg); /* Rotação permanece */
+  opacity: 0.2; /* Reduz a opacidade para suavizar o impacto visual */
+  z-index: 1; /* Garante que fiquem atrás dos gráficos */
+  width: 50%; /* Mantém o tamanho das imagens */
+  pointer-events: none; /* Impede que a imagem interfira na interação do usuário */
+}
+
+.image-fundoCards {
+  margin-top: -122%; /* Ajuste fino para a posição vertical */
+  margin-left: 285%; /* Ajuste fino para a posição horizontal */
+}
+
+.image-fundoCards2 {
+  margin-top: 15%; /* Ajuste fino para a posição vertical */
+  margin-left: 660%; /* Ajuste fino para a posição horizontal */
 }
 
 .tituloGraficos {
@@ -353,6 +398,7 @@ canvas {
   justify-content: space-evenly;
   align-items: center;
   border-right: 3px solid #000000;
+
   background-color: #0e5541;
 }
 
@@ -379,9 +425,10 @@ canvas {
 }
 
 .hello h3 {
+  text-align: center;
   color: #ffffff;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .hello h3 span {
@@ -389,12 +436,13 @@ canvas {
 }
 
 .btn-nav {
+  font-size: 18px;
   width: 40%;
   color: rgb(255, 255, 255);
   background-color: #000000;
-  border-radius: 15px;
+  border-radius: 25px;
   text-align: center;
-  padding: 2% 5%;
+  padding: 5% 5%;
 }
 
 .btn-nav-white {
@@ -419,12 +467,14 @@ canvas {
 }
 
 .btn-logout {
+  font-size: 18px;
   margin: 0;
   padding: 0;
-  width: 20%;
+  width: 30%;
   background-color: #ffffff;
   color: rgb(11, 90, 64);
-  border-radius: 10px;
+  border-radius: 30px;
+  border: #063b2c solid 4px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
@@ -436,15 +486,15 @@ canvas {
 }
 
 .totalU {
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 2%;
-  margin-left: 100%;
-  width: 280px;
+  margin-left: 65%;
+  width: 320px;
   height: 110px;
   border-radius: 30px;
-  border: solid 2px #000000;
-  box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
-  background-color: #0e5541;
+  border: solid 3px #000000;
+  box-shadow: 10px 10px 10px rgba(12, 221, 134, 0.89);
+  background-color: #077e5c;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -454,19 +504,43 @@ canvas {
 }
 
 .tentQuiz {
-  font-size: 20px;
-  margin-top: -110%;
-  margin-left: 400%;
-  width: 280px;
+  font-size: 22px;
+  margin-top: -112%;
+  margin-left: 420%;
+  width: 320px;
   height: 110px;
   border-radius: 30px;
-  border: solid 2px #000000;
-  box-shadow: 0 0px 30px rgba(9, 187, 113, 0.699);
-  background-color: #0e5541;
+  border: solid 3px #000000;
+  box-shadow: 10px 10px 10px rgba(12, 221, 134, 0.89);
+  background-color: #077e5c;
   display: flex;
   flex-direction: column;
   gap: 24px;
   color: #ffffff;
   align-items: center;
   justify-content: center;
+}
+
+.pontUser {
+  font-size: 22px;
+  margin-top: -110%;
+  margin-left: 775%;
+  width: 320px;
+  height: 110px;
+  border-radius: 30px;
+  border: solid 3px #000000;
+  box-shadow: 10px 10px 10px rgba(12, 221, 134, 0.89);
+  background-color: #077e5c;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+
+.result {
+  color: #000000;
+  font-size: 26px;
+  font-weight: bold;
 }

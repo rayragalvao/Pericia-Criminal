@@ -68,7 +68,7 @@ function acertosUser(req, res) {
 }
 
 function pontUser(req, res) {
-    console.log(   'estou na função acertoUser ')
+    console.log(   'estou na função pontUser ')
 
     resultModel.pontUser()
     .then(function(resultado){
