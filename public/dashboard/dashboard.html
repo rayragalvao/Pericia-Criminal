@@ -262,7 +262,7 @@
 
     function obterDadosGraficoLinha3() {
 
-fetch(`/result/pontUser/`)
+fetch(`/result/pontuUser/`)
     .then(function (response) {
         console.log(response.ok)
         if (response.ok) {
@@ -270,7 +270,7 @@ fetch(`/result/pontUser/`)
                 .then(function (resposta) {
                     // plotarGrafico(resposta,'barra')
                     console.log(resposta[0].nomeUsuario)
-                    pontaUser.innerHTML = resposta[0].nomeUsuario;
+                    pontuUser.innerHTML = resposta[0].nomeUsuario;
                     // console.log(JSON.stringify(resposta.qtdUsuarios));
                 })
         } else {
@@ -295,7 +295,7 @@ fetch(`/result/pontUser/`)
                 labels: ['Notas por usuário'],
                 datasets: [
                     {
-                        label: 'Minímo',
+                        label: 'Menor',
                         data: [],
                         backgroundColor: '#08af77c0',
                         borderColor: 'black',
@@ -304,7 +304,7 @@ fetch(`/result/pontUser/`)
                         borderWidth: 2
                     },
                     {
-                        label: 'Máximo',
+                        label: 'Maior',
                         data: [],
                         backgroundColor: '#08af77f0',
                         borderColor: 'black',

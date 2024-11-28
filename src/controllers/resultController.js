@@ -67,10 +67,10 @@ function acertosUser(req, res) {
     })
 }
 
-function pontUser(req, res) {
-    console.log(   'estou na função pontUser ')
+function pontuUser(req, res) {
+    console.log(   'estou na função pontuUser ')
 
-    resultModel.pontUser()
+    resultModel.pontuUser()
     .then(function(resultado){
         console.log("lalallal" + resultado)
         if(resultado.length > 0) {
@@ -83,4 +83,4 @@ function pontUser(req, res) {
     })
 }
 
-module.exports = {puxar,totalUsuarios,tentQuiz,acertosUser,pontUser}
+module.exports = {puxar,totalUsuarios,tentQuiz,acertosUser,pontuUser}

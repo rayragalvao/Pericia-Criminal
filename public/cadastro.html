@@ -130,8 +130,6 @@ function cadastrar() {
     nomeVar == "" ||
     emailVar == "" ||
     senhaVar == "" 
-    // confirmacaoSenhaVar == "" ||
-    // codigoVar == ""
   ) {
     cardErro.style.display = "block";
     mensagem_erro.innerHTML =
@@ -141,6 +139,19 @@ function cadastrar() {
     return false;
   } else {
     setInterval(sumirMensagem, 5000);
+  }
+
+  if (!emailVar.includes("@gmail.com")) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "O e-mail deve conter '@gmail.com'.";
+    return false;
+  }
+
+  var senhaRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+  if (!senhaRegex.test(senhaVar)) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "A senha deve ter pelo menos 6 caracteres e conter letras maiúsculas e minúsculas.";
+    return false;
   }
 
   // Verificando se o código de ativação é de alguma empresa cadastrada

@@ -18,7 +18,7 @@ router.get ("/acertosUser/", function(req, res) {
     resultController.acertosUser(req, res);
 })
 
-router.get ("/pontUser/", function(req, res) {
-    resultController.pontUser(req, res);
+router.get ("/pontuUser/", function(req, res) {
+    resultController.pontuUser(req, res);
 })
 module.exports = router;

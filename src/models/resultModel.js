@@ -29,11 +29,11 @@ function acertosUser() {
     return database.executar(instrucaoSQL)
 }
 
-function pontUser() {
+function pontuUser() {
     console.log("Estou na model do acertosUser")
 
     var instrucaoSQL = `select usuario.nome as nomeUsuario from usuario join quiz on usuario.id = quiz.fkUsuario where quiz.pontos = (select max(pontos) from quiz);`
     return database.executar(instrucaoSQL)
 }
 
-module.exports = {puxar,totalUsuarios,tentQuiz,acertosUser,pontUser}
+module.exports = {puxar,totalUsuarios,tentQuiz,acertosUser,pontuUser}

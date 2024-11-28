@@ -9,7 +9,7 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(#000000, #048b5e, #048b5e, #000000);
+    background: linear-gradient(#01130b, #048b5e, #048b5e, #01130b);
     display: grid;
     place-content: center;
     font-family: 'Sour Gummy', sans-serif;
@@ -326,7 +326,7 @@ body .back-btn:hover {
     border: 1px solid #000000; 
     border-radius: 15px;
     padding: 10px 20px; 
-    font-size: 16px;
+    font-size: 24px;
     box-shadow: 0 4px 6px rgba(1, 54, 46, 0.788); 
     display: none; 
     z-index: 10; 
